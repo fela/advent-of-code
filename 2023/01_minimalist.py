@@ -4,10 +4,10 @@ with open('01.txt') as f:
     data = f.readlines()
 
 
-def solve(second_part: bool):
+def solve(part):
     tot = 0
     for line in data:
-        if second_part:
+        if part == 'second':
             for i, digit in enumerate('one two three four five six seven eight nine'.split()):
                 line = line.replace(digit, f'{digit}{i+1}{digit}')
         digits = [i for i in line if i.isdigit()]
@@ -15,5 +15,5 @@ def solve(second_part: bool):
     return tot
 
 
-print(solve(False))
-print(solve(True))
+print(solve('first'))
+print(solve('second'))
