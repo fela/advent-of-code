@@ -10,7 +10,7 @@ def solve(part):
         if part == 'second':
             for i, digit in enumerate('one two three four five six seven eight nine'.split()):
                 line = line.replace(digit, f'{digit}{i+1}{digit}')
-        digits = [i for i in line if i.isdigit()]
+        digits = [c for c in line if c.isdigit()]
         tot += int(digits[0] + digits[-1])
     return tot
 
