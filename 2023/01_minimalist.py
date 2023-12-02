@@ -15,5 +15,4 @@ def solve(part):
     return tot
 
 
-print(solve('first'))
-print(solve('second'))
+print(solve('first'), solve('second'))
