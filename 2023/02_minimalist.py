@@ -1,5 +1,3 @@
-# A more minimalist solution
-
 from math import prod
 
 limits = {'red': 12, 'green': 13, 'blue': 14}

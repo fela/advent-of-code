@@ -1,5 +1,3 @@
-# A more minimalist solution
-
 digit_names = 'one two three four five six seven eight nine'.split()
 
 def solve(part):
