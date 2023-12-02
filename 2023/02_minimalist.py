@@ -2,11 +2,10 @@
 
 from math import prod
 
-data = open('02.txt').readlines()
 limits = {'red': 12, 'green': 13, 'blue': 14}
 solution1, solution2 = 0, 0
 
-for i, line in enumerate(data):
+for i, line in enumerate(open('02.txt')):
     min_cubes = {k: 0 for k in limits}
     for draw in line.split(': ')[1].split('; '):
         for card in draw.split(', '):
