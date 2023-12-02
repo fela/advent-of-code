@@ -1,7 +1,6 @@
 # A more minimalist solution
 
-with open('01.txt') as f:
-    data = f.readlines()
+data = open('02.txt').readlines()
 
 
 def solve(part):
