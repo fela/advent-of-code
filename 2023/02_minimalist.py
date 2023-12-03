@@ -1,5 +1,4 @@
-import re
-from math import prod
+import re, math
 
 limits = {'red': 12, 'green': 13, 'blue': 14}
 solution1, solution2 = 0, 0
@@ -11,6 +10,6 @@ for i, line in enumerate(open('02.txt')):
 
     if all(min_cubes[color] <= limits[color] for color in limits):
         solution1 += i+1
-    solution2 += prod(min_cubes.values())
+    solution2 += math.prod(min_cubes.values())
 
 print(solution1, solution2)
