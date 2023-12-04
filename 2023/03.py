@@ -32,5 +32,4 @@ for row, line in enumerate(data):
                 part2 += math.prod(numbers[i] for i in indices)
             part1_indices.update(indices)
 
-print(sum(numbers[i] for i in part1_indices))
-print(part2)
+print(sum(numbers[i] for i in part1_indices), part2)
