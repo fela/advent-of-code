@@ -14,7 +14,7 @@ def solve(part):
         else:
             current.append((first, first+second))
 
-    for sec_from, sec_to, section in re.findall(r'(\w+)-to-(\w+) map:\n([\n\d ]+)', rest):
+    for section in re.findall(r'\w+-to-\w+ map:\n([\n\d ]+)', rest):
         prev = current.copy()
         current = []
 
