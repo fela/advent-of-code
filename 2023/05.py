@@ -5,7 +5,7 @@ first_line, rest = open('05.txt').read().split('\n', maxsplit=1)
 
 def solve(part):
     seeds = list(int(s) for s in re.findall(r'(\d+)', first_line))
-    current = []  # currently active rages
+    current = []  # currently active ranges
     for i in range(0, len(seeds), 2):
         first, second = seeds[i:i+2]
         if part == 'first':
