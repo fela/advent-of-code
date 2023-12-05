@@ -12,7 +12,6 @@ for row, line in enumerate(data):
         for col in range(match.start(), match.end()):
             pos_to_idx[row, col] = len(numbers)-1
 
-
 def neighbors(row, col):
     for r in range(row-1, row+2):
         for c in range(col-1, col+2):

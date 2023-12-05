@@ -1,12 +1,11 @@
 import re
 
-input_string = open('05.txt').read()
-first_line, rest = input_string.split('\n', maxsplit=1)
+first_line, rest = open('05.txt').read().split('\n', maxsplit=1)
 
 
 def solve(part):
     seeds = list(int(s) for s in re.findall(r'(\d+)', first_line))
-    current = []
+    current = []  # currently active rages
     for i in range(0, len(seeds), 2):
         first, second = seeds[i:i+2]
         if part == 'first':
@@ -33,8 +32,9 @@ def solve(part):
             lowest_map = min(lowest_map, b)
             highest_map = max(highest_map, b+c)
 
+        highest = max(el[1] for el in prev)
         add_ranges(map_start=0, map_end=lowest_map, diff=0)
-        add_ranges(map_start=highest_map, map_end=max(el[1] for el in prev), diff=0)
+        add_ranges(map_start=highest_map, map_end=highest, diff=0)
 
     return min(current)[0]
 
