@@ -5,7 +5,7 @@ data = open('04.txt').readlines()
 part1, part2 = 0, 0
 copies = defaultdict(lambda: 1)
 for i, line in enumerate(data):
-    winning, on_card = line.split(': ')[1].split('|')
+    winning, on_card = line.split(':')[1].split('|')
     winning = set(winning.strip().split())
     num = len(winning & set(on_card.strip().split()))
     if num > 0:
