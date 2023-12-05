@@ -1,6 +1,6 @@
 import re
 
-first_line, rest = open('05.txt').read().split('\n', maxsplit=1)
+first_line, *sections = open('05.txt').read().split('\n\n')
 
 
 def solve(part):
@@ -13,7 +13,7 @@ def solve(part):
         else:
             current.append((first, first+second))
 
-    for section in re.findall(r'\w+-to-\w+ map:\n([\n\d ]+)', rest):
+    for section in sections:
         prev = current.copy()
         current = []
 
