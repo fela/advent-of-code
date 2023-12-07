@@ -1,7 +1,7 @@
 import re
 from collections import Counter
 
-data = open('07.txt').read()
+data = open('d/07').read()
 
 
 def score(cards: str, part) -> int:

@@ -1,6 +1,6 @@
 import re
 
-first_line, *sections = open('05.txt').read().split('\n\n')
+first_line, *sections = open('d/05').read().split('\n\n')
 
 
 def solve(part):

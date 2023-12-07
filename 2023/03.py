@@ -1,6 +1,6 @@
 import re, math
 
-data = [l.strip() for l in open('03.txt').readlines()]
+data = [l.strip() for l in open('d/03').readlines()]
 rows, cols = len(data), len(data[0])
 
 # Build data structure

@@ -2,7 +2,7 @@ digit_names = 'one two three four five six seven eight nine'.split()
 
 def solve(part):
     tot = 0
-    for line in open('02.txt'):
+    for line in open('d/02'):
         if part == 'second':
             for i, name in enumerate(digit_names):
                 line = line.replace(name, f'{name}{i+1}{name}')

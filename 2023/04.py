@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-data = open('04.txt').readlines()
+data = open('d/04').readlines()
 
 part1, part2 = 0, 0
 copies = defaultdict(lambda: 1)

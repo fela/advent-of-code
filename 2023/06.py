@@ -2,7 +2,7 @@ import re
 from math import floor, ceil
 
 part1, part2 = [], []
-for line in open('06.txt').readlines():
+for line in open('d/06').readlines():
     nums = re.findall(r'(\d+)', line)
     part1.append([int(s) for s in nums])
     part2.append([int(''.join(nums))])
