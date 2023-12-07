@@ -28,12 +28,10 @@ def score(cards: str, part) -> int:
 
 
 def solve(part):
-    processed = [
-        (score(c, part), int(b)) for i, (c, b) in
-        enumerate(re.findall(r'(\w+)\s+(\d+)', data))
-    ]
+    hands = re.findall(r'(\w+)\s+(\d+)', data)
+    hands.sort(key=lambda c: score(c[0], part))
 
-    return sum((i+1)*b for i, (_, b) in enumerate(sorted(processed)))
+    return sum((i+1)*int(b) for i, (_, b) in enumerate(hands))
 
 
 print(solve('first'), solve('second'))
