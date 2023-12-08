@@ -14,7 +14,7 @@ def score(cards: str, part) -> int:
         cards = cards.replace(c, h)
     value = int(cards, 16)
 
-    # don't count Js as separate counts
+    # counts excluding Js
     count_values = Counter(cards.replace('1', '')).values()
     if len(count_values) == 0:  # all jokers
         return 10**15
