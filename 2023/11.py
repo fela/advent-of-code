@@ -11,8 +11,8 @@ def solve(expansion):
         for c, el in enumerate(line):
             if el == '#':
                 coords.append((
-                    r+len([el for el in empty_rows if el < r])*(expansion-1),
-                    c+len([el for el in empty_cols if el < c])*(expansion-1),
+                    r + sum(el < r for el in empty_rows)*(expansion-1),
+                    c + sum(el < c for el in empty_cols)*(expansion-1),
                 ))
 
     tot = 0
