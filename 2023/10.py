@@ -35,10 +35,10 @@ while prev is None or data[r][c] != 'S':
             for cc in range(max(0, c-1), min(c+2, len(data[0]))):
                 conn = connections(rr, cc)
                 if (r, c) in conn:
-                    found = rr, cc
+                    start = rr, cc
         prev = r, c
-        r, c = found
-        visited.add(found)
+        r, c = start
+        visited.add(start)
     else:
         conn = connections(r, c)
         prev, (r, c) = (r, c), conn[1 if conn[0] == prev else 0]
