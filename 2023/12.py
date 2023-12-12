@@ -23,7 +23,7 @@ def arrangements_(blocks: list[list], vals: list[int]) -> int:
         return 0
 
     tot = 0
-    # ignore first '?'
+    # case: ignore first '?'
     if blocks[0][0] == '?':
         blocks2 = blocks.copy()
         blocks2[0] = blocks2[0][1:]
@@ -32,7 +32,7 @@ def arrangements_(blocks: list[list], vals: list[int]) -> int:
 
         tot += arrangements(blocks2, vals)
 
-    # use next element (will be either '?' or '#')
+    # case: use first char (will be either '?' or '#')
     if len(blocks[0]) == vals[0] or (len(blocks[0]) > vals[0] and blocks[0][vals[0]] == '?'):
         vals2 = vals[1:]
 
@@ -51,8 +51,8 @@ def solve(duplications):
         blocks, values = line.split()
         values = [int(s) for s in values.split(',')]
 
-        blocks2 = re.split(r'\.+', '?'.join([blocks]*5))
-        res += arrangements([b for b in blocks2 if b], values * 5)
+        blocks = re.split(r'\.+', '?'.join([blocks]*5))
+        res += arrangements([b for b in blocks if b], values * 5)
 
 
 print(solve(1), solve(5))
