@@ -45,28 +45,14 @@ while prev is None or data[r][c] != 'S':
         visited.add((r, c))
 
 inside_count = 0
-for rr, line in enumerate(data):
-    borders = 0
-    last = 0
-    for cc, el in enumerate(line):
-        if (rr, cc) in visited:
-            el = data[rr][cc]
-            # hard-coding S might be different with different data
-            if el in 'SLJ':
-                if last == 1:
-                    borders += 1
-                last -= 1
-                if last == -2:
-                    last = 0
-            elif el in 'F7':
-                if last == -1:
-                    borders += 1
-                last += 1
-                if last == 2:
-                    last = 0
-            elif el == '|':
-                borders += 1
-        else:
-            inside_count += borders % 2
+for i in range(-140, 140):
+    is_inside = False
+    for row in range(140):
+        col = row+i
+        if 0 <= row < 140 and 0 <= col < 140:
+            if (row, col) in visited and data[row][col] in 'SFJ|-':
+                is_inside = not is_inside
+            if is_inside and (row, col) not in visited:
+                inside_count += 1
 
 print(dist//2, inside_count)
