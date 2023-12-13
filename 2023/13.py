@@ -15,7 +15,7 @@ def check_col(pattern: list[str], col: int) -> bool:
     return True
 
 
-def reflection_line(pattern_raw: str, exclude: int =- 1) -> int:
+def reflection_line(pattern_raw: str, exclude: int = -1) -> int:
     pattern = pattern_raw.splitlines()
     for i in range(len(pattern) - 1):
         if check_row(pattern, i):
@@ -32,7 +32,7 @@ def reflection_line(pattern_raw: str, exclude: int =- 1) -> int:
     return -1
 
 
-def reflection_fix(pattern_raw: str, exclude: int =- 1) -> int:
+def reflection_fix(pattern_raw: str, exclude: int = -1) -> int:
     for i, char in enumerate(pattern_raw):
         if char in '.#':
             swap = '.' if char == '#' else '#'
