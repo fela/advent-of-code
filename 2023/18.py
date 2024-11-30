@@ -92,7 +92,7 @@ def print_line(line):
             border[row, col] = True
 
     minr = min(r for r, _ in border.keys())
-    minc = min(c for c, _ in border.keys())
+    minc = min(c for _, c in border.keys())
     new_border = {}
     n_rows = n_cols = 0
     for (r, c), v in border.items():
@@ -148,5 +148,6 @@ def part2():
         line.append((DIRS_I[int(dir_i)], int(len_hex, base=16)))
 
     return compute(line)
+
 
 print(part1(), part2())
