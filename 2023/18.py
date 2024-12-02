@@ -31,6 +31,7 @@ DIRS_I = [
 ]
 
 
+# I'm sorry!
 def simplify3(s1, s2, s3):
     if s1[0][0] == -s2[0][0] and s1[0][1] == -s2[0][1]:
         area = min(s1[1], s2[1])
