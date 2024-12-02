@@ -1,4 +1,5 @@
 data = open('d/02').read().splitlines()
+data = [list(map(int, el.split())) for el in data]
 
 def check(vals):
     diffs = [x-y for x, y in zip(vals, vals[1:])]
@@ -7,12 +8,8 @@ def check(vals):
 def check_part2(vals):
     return any(check(vals[:i]+vals[i+1:]) for i in range(len(vals)))
 
-part1, part2 = 0, 0
-for i, el in enumerate(data):
-    vals = [int(p) for p in el.split()]
-    if check(vals):
-        part1 += 1
-    if check_part2(vals):
-        part2 += 1
 
-print(part1, part2)
+print(
+    sum(check(v) for v in data), 
+    sum(check_part2(v) for v in data)
+)
