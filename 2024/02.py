@@ -11,7 +11,6 @@ def check(vals):
 def check_part2(vals):
     return any(check(vals[:i]+vals[i+1:]) for i in range(len(vals)))
 
-
 print(
     sum(check(v) for v in data), 
     sum(check_part2(v) for v in data)
