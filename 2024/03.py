@@ -1,22 +1,17 @@
 import re
-import math as m
-from collections import Counter
+data = open('d/03').read()
 
-data = open('d/03').read().strip().readlines()
-data = '''
-'''.strip().readlines()
+part1, part2 = 0, 0
+enabled = True
+for match in re.findall(r'mul\((\d+),(\d+)\)|(do\(\))|(don\'t\(\))', data):
+    x, y, do, dont = match
+    if do == 'do()':
+        enabled = True
+    elif dont == "don't()":
+        enabled = False
+    else:
+        part1 += int(x) * int(y)
+        if enabled:
+            part2 += int(x) * int(y)
 
-def solve1():
-    for l in data:
-        pass
-    xx = re.findall(r'(\w+)\s+(\d+)', data)
-    return 123
-
-def solve2():
-    for l in data:
-        pass
-    xx = re.findall(r'(\w+)\s+(\d+)', data)
-    return 123
-
-
-print(solve1(), solve2())
+print(part1, part2)
