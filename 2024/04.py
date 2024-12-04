@@ -1,5 +1,6 @@
 import re
 
+# Part 1
 data = open('d/04').read().strip().split('\n')
 data_flipped = '\n'.join(''.join(x) for x in zip(*data))
 
@@ -20,6 +21,7 @@ def diag1(row, col):
 def diag2(row, col):
     return data[row-1][col+1] + data[row][col] + data[row+1][col-1]
 
+# Part 2
 part2 = 0
 matches = ['MAS', 'SAM']
 for row in range(1, len(data)-1):
@@ -28,5 +30,3 @@ for row in range(1, len(data)-1):
             part2 += 1
             
 print(part1, part2)
-
-
