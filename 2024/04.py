@@ -15,13 +15,13 @@ for match in ['XMAS', 'SAMX']:
     for d in ['_'.join(data), data_flipped, data_shifted_flipped, data_reverse_shifted_flipped]:
         part1 += len(re.findall(match, d))
 
+# Part 2
 def diag1(row, col):
     return data[row-1][col-1] + data[row][col] + data[row+1][col+1]
 
 def diag2(row, col):
     return data[row-1][col+1] + data[row][col] + data[row+1][col-1]
 
-# Part 2
 part2 = 0
 matches = ['MAS', 'SAM']
 for row in range(1, len(data)-1):
