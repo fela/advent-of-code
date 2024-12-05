@@ -8,3 +8,5 @@ print(
     sum(abs(x-y) for x, y in zip(sorted(l1), sorted(l2))),
     sum(counts[x]*x for x in l1)
 )
+
+
