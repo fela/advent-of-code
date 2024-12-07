@@ -15,7 +15,7 @@ def has_solution(result, nums, part):
         return has_solution(int(str(result)[:-len(str(nums[-1]))]), nums[:-1], part)
     return False
 
-def solve(part=1):
+def solve(part):
     tot = 0
     for res, nums in re.findall(r'(\d+):\s+([\d ]+)', data):
         res = int(res)
