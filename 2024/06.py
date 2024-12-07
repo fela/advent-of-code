@@ -26,6 +26,7 @@ def blocks_visited(data):
         if (r, c, dir_r, dir_c) in visited: 
             return -1
         visited.add((r, c, dir_r, dir_c))
+        
         while data[r+dir_r][c+dir_c] == '#':
             dir_r, dir_c = next[dir_r, dir_c]
             if not(0 <= r+dir_r < len(data) and 0 <= c+dir_c < len(data[0])):
