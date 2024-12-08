@@ -1,6 +1,6 @@
 import re
 
-data = open('d/07').read().strip()
+data = open('d/07').read()
 
 def has_solution(result, nums, part):
     if nums[0] > result:
